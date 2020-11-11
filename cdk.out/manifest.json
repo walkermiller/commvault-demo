@@ -1,0 +1,676 @@
+{
+  "version": "6.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "commvault-demo": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://074767584099/us-east-1",
+      "properties": {
+        "templateFile": "commvault-demo.template.json"
+      },
+      "metadata": {
+        "/commvault-demo/commvault/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultCC95A527",
+            "trace": [
+              "new Cluster (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/cluster.js:42:25)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultbucket7EF4EC68",
+            "trace": [
+              "new Bucket (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-s3/lib/bucket.js:435:26)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/comvault-efs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "comvaultefs32A048FC",
+            "trace": [
+              "new FileSystem (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:68:28)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/comvault-efs/EfsSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "comvaultefsEfsSecurityGroup0829A991",
+            "trace": [
+              "new SecurityGroup (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:192:30)",
+              "new FileSystem (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:80:55)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/comvault-efs/EfsMountTarget1": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "comvaultefsEfsMountTarget18F24CE53",
+            "trace": [
+              "/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:92:33",
+              "Array.forEach (<anonymous>)",
+              "new FileSystem (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:91:27)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/comvault-efs/EfsMountTarget2": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "comvaultefsEfsMountTarget2586C3089",
+            "trace": [
+              "/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:92:33",
+              "Array.forEach (<anonymous>)",
+              "new FileSystem (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:91:27)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/comvault-efs/EfsMountTarget3": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "comvaultefsEfsMountTarget3BB9DB20E",
+            "trace": [
+              "/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:92:33",
+              "Array.forEach (<anonymous>)",
+              "new FileSystem (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:91:27)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-task/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaulttaskTaskRoleFCB513A0",
+            "trace": [
+              "new Role (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "new TaskDefinition (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:66:43)",
+              "new FargateTaskDefinition (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:19:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-task/TaskRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaulttaskTaskRoleDefaultPolicy43E94F17",
+            "trace": [
+              "new Policy (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-iam/lib/policy.js:46:26)",
+              "Role.addToPrincipalPolicy (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-iam/lib/role.js:193:34)",
+              "Role.addToPolicy (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-iam/lib/role.js:203:21)",
+              "FargateTaskDefinition.addToTaskRolePolicy (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:179:23)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-task/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaulttaskCC9BAAB0",
+            "trace": [
+              "new TaskDefinition (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:69:25)",
+              "new FargateTaskDefinition (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:19:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-task/commvault-container/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaulttaskcommvaultcontainerLogGroupC87A025B",
+            "trace": [
+              "new LogGroup (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-logs/lib/log-group.js:141:26)",
+              "AwsLogDriver.bind (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.js:28:48)",
+              "new ContainerDefinition (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:83:50)",
+              "FargateTaskDefinition.addContainer (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-task/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaulttaskExecutionRole396123FC",
+            "trace": [
+              "new Role (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "FargateTaskDefinition.obtainExecutionRole (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:242:35)",
+              "AwsLogDriver.bind (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.js:31:69)",
+              "new ContainerDefinition (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:83:50)",
+              "FargateTaskDefinition.addContainer (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-task/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaulttaskExecutionRoleDefaultPolicy5CB900E7",
+            "trace": [
+              "new Policy (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-iam/lib/policy.js:46:26)",
+              "Role.addToPrincipalPolicy (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-iam/lib/role.js:193:34)",
+              "Function.addToPrincipal (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-iam/lib/grant.js:82:65)",
+              "LogGroup.grant (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-logs/lib/log-group.js:86:26)",
+              "LogGroup.grantWrite (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-logs/lib/log-group.js:80:21)",
+              "AwsLogDriver.bind (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.js:31:23)",
+              "new ContainerDefinition (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:83:50)",
+              "FargateTaskDefinition.addContainer (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceLBD58FBF4B",
+            "trace": [
+              "new BaseLoadBalancer (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-load-balancer.js:29:26)",
+              "new ApplicationLoadBalancer (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.js:22:9)",
+              "new ApplicationLoadBalancedServiceBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:34:15)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:14:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/LB/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceLBSecurityGroup401A66BF",
+            "trace": [
+              "new SecurityGroup (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:192:30)",
+              "new ApplicationLoadBalancer (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.js:28:56)",
+              "new ApplicationLoadBalancedServiceBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:34:15)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:14:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/LB/SecurityGroup/to commvaultdemocommvaultserviceServiceSecurityGroup4481C479:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceLBSecurityGrouptocommvaultdemocommvaultserviceServiceSecurityGroup4481C4798029879C68",
+            "trace": [
+              "SecurityGroup.addEgressRule (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:58:13)",
+              "SecurityGroup.addEgressRule (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:287:19)",
+              "/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:73:31",
+              "ReactiveList.forEachAndForever (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:198:13)",
+              "/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:72:51",
+              "ReactiveList.forEachAndForever (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:198:13)",
+              "Connections.allowTo (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:71:30)",
+              "Connections.allowFrom (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:102:31)",
+              "ApplicationListener.registerConnectable (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:277:33)",
+              "ApplicationTargetGroup.registerConnectable (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.js:80:22)",
+              "Object.attachToApplicationTargetGroup (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:193:29)",
+              "FargateService.attachToApplicationTargetGroup (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:157:47)",
+              "ApplicationTargetGroup.addTarget (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.js:57:35)",
+              "ApplicationLoadBalancedFargateService.addServiceAsTarget (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:121:26)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:65:14)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/LB/PublicListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceLBPublicListener4F43F6E6",
+            "trace": [
+              "new BaseListener (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-listener.js:15:26)",
+              "new ApplicationListener (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:28:9)",
+              "ApplicationLoadBalancer.addListener (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.js:51:16)",
+              "new ApplicationLoadBalancedServiceBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:46:38)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:14:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/LB/PublicListener/ECSGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceLBPublicListenerECSGroupBB3FCD89",
+            "trace": [
+              "new TargetGroupBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-target-group.js:35:25)",
+              "new ApplicationTargetGroup (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.js:20:9)",
+              "ApplicationListener.addTargets (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:187:23)",
+              "new ApplicationLoadBalancedServiceBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:51:42)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:14:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/LB/PublicRedirectListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceLBPublicRedirectListenerDD0EDD0A",
+            "trace": [
+              "new BaseListener (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-listener.js:15:26)",
+              "new ApplicationListener (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:28:9)",
+              "ApplicationLoadBalancer.addListener (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.js:51:16)",
+              "new ApplicationLoadBalancedServiceBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:70:50)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:14:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/Certificate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceCertificate90E760E4",
+            "trace": [
+              "new Certificate (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-certificatemanager/lib/certificate.js:92:22)",
+              "new ApplicationLoadBalancedServiceBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:60:36)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:14:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/DNS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceDNSF70B3247",
+            "trace": [
+              "new RecordSet (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-route53/lib/record-set.js:67:27)",
+              "new ARecord (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-route53/lib/record-set.js:98:9)",
+              "new ApplicationLoadBalancedServiceBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:86:28)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:14:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceLoadBalancerDNSF61D4DC7",
+            "trace": [
+              "new ApplicationLoadBalancedServiceBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:96:9)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:14:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/ServiceURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceServiceURL6434A5E6",
+            "trace": [
+              "new ApplicationLoadBalancedServiceBase (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:97:9)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:14:9)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/Service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceService442C1459",
+            "trace": [
+              "new BaseService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:112:25)",
+              "new FargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-service.js:48:9)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:50:24)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/Service/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceServiceSecurityGroup212690EF",
+            "trace": [
+              "new SecurityGroup (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:192:30)",
+              "FargateService.configureAwsVpcNetworkingWithSecurityGroups (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:366:31)",
+              "new FargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-service.js:66:14)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:50:24)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/commvault-service/Service/SecurityGroup/from commvaultdemocommvaultserviceLBSecurityGroup75B9C718:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "commvaultserviceServiceSecurityGroupfromcommvaultdemocommvaultserviceLBSecurityGroup75B9C71880D5D1DA73",
+            "trace": [
+              "SecurityGroup.addIngressRule (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:43:13)",
+              "SecurityGroup.addIngressRule (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:251:19)",
+              "/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:96:31",
+              "ReactiveList.forEachAndForever (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:198:13)",
+              "/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:95:51",
+              "ReactiveList.forEachAndForever (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:198:13)",
+              "Connections.allowFrom (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ec2/lib/connections.js:94:30)",
+              "ApplicationListener.registerConnectable (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:277:33)",
+              "ApplicationTargetGroup.registerConnectable (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.js:80:22)",
+              "Object.attachToApplicationTargetGroup (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:193:29)",
+              "FargateService.attachToApplicationTargetGroup (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:157:47)",
+              "ApplicationTargetGroup.addTarget (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.js:57:35)",
+              "ApplicationLoadBalancedFargateService.addServiceAsTarget (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.js:121:26)",
+              "new ApplicationLoadBalancedFargateService (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:65:14)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/CommvaultLog-access-point/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CommvaultLogaccesspoint56A64C35",
+            "trace": [
+              "new AccessPoint (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/access-point.js:17:26)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/CommVaultRegistrys-access-point/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CommVaultRegistrysaccesspointB093A8DB",
+            "trace": [
+              "new AccessPoint (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/access-point.js:17:26)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/libraryPath-access-point/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "libraryPathaccesspoint3792E34C",
+            "trace": [
+              "new AccessPoint (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/access-point.js:17:26)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/IndexCache-access-point/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IndexCacheaccesspoint99530869",
+            "trace": [
+              "new AccessPoint (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/access-point.js:17:26)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/jobResults-access-point/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "jobResultsaccesspointF07C1880",
+            "trace": [
+              "new AccessPoint (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/access-point.js:17:26)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/certificates-access-point/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "certificatesaccesspointBA4C2D75",
+            "trace": [
+              "new AccessPoint (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/aws-efs/lib/access-point.js:17:26)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/commvault-demo/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/core/lib/private/synthesis.js:127:9",
+              "visit (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/core/lib/private/synthesis.js:181:9)",
+              "visit (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/core/lib/private/synthesis.js:178:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/core/lib/private/synthesis.js:116:5)",
+              "Object.synthesize (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/core/lib/private/synthesis.js:16:5)",
+              "App.synth (/tmp/jsii-kernel-Duussa/node_modules/@aws-cdk/core/lib/stage.js:82:41)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/home/coder/project/.local/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

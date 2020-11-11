@@ -1,0 +1,79 @@
+{
+  "vpc-provider:account=074767584099:filter.vpc-id=vpc-77a6ee0d:region=us-east-1:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-77a6ee0d",
+    "vpcCidrBlock": "172.31.0.0/16",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Private",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-036ee3e72c58d6b48",
+            "cidr": "172.31.96.0/20",
+            "availabilityZone": "us-east-1b",
+            "routeTableId": "rtb-08c132dd3a7f8652f"
+          },
+          {
+            "subnetId": "subnet-023ac1f96d4611583",
+            "cidr": "172.31.112.0/20",
+            "availabilityZone": "us-east-1d",
+            "routeTableId": "rtb-08c132dd3a7f8652f"
+          },
+          {
+            "subnetId": "subnet-0185b3310f2050926",
+            "cidr": "172.31.128.0/20",
+            "availabilityZone": "us-east-1f",
+            "routeTableId": "rtb-08c132dd3a7f8652f"
+          }
+        ]
+      },
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-15516b3b",
+            "cidr": "172.31.80.0/20",
+            "availabilityZone": "us-east-1a",
+            "routeTableId": "rtb-d53fe8ab"
+          },
+          {
+            "subnetId": "subnet-05ab6448",
+            "cidr": "172.31.16.0/20",
+            "availabilityZone": "us-east-1b",
+            "routeTableId": "rtb-d53fe8ab"
+          },
+          {
+            "subnetId": "subnet-7150682d",
+            "cidr": "172.31.32.0/20",
+            "availabilityZone": "us-east-1c",
+            "routeTableId": "rtb-d53fe8ab"
+          },
+          {
+            "subnetId": "subnet-b0ccf0d7",
+            "cidr": "172.31.0.0/20",
+            "availabilityZone": "us-east-1d",
+            "routeTableId": "rtb-d53fe8ab"
+          },
+          {
+            "subnetId": "subnet-ff490ac1",
+            "cidr": "172.31.48.0/20",
+            "availabilityZone": "us-east-1e",
+            "routeTableId": "rtb-d53fe8ab"
+          },
+          {
+            "subnetId": "subnet-1eb34210",
+            "cidr": "172.31.64.0/20",
+            "availabilityZone": "us-east-1f",
+            "routeTableId": "rtb-d53fe8ab"
+          }
+        ]
+      }
+    ]
+  },
+  "hosted-zone:account=074767584099:domainName=code.awalker.dev:region=us-east-1": {
+    "Id": "/hostedzone/Z10007902E9W31HPREL13",
+    "Name": "code.awalker.dev."
+  }
+}

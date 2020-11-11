@@ -1,0 +1,850 @@
+{
+  "Resources": {
+    "commvaultCC95A527": {
+      "Type": "AWS::ECS::Cluster",
+      "Properties": {
+        "ClusterName": "commvault-cs",
+        "ClusterSettings": [
+          {
+            "Name": "containerInsights",
+            "Value": "enabled"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault/Resource"
+      }
+    },
+    "commvaultbucket7EF4EC68": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": "commvault-demo-bucket-us-east-1-074767584099"
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-bucket/Resource"
+      }
+    },
+    "comvaultefs32A048FC": {
+      "Type": "AWS::EFS::FileSystem",
+      "Properties": {
+        "Encrypted": true,
+        "FileSystemTags": [
+          {
+            "Key": "Name",
+            "Value": "commvault-efs"
+          }
+        ]
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/comvault-efs/Resource"
+      }
+    },
+    "comvaultefsEfsSecurityGroup0829A991": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "commvault-demo/comvault-efs/EfsSecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "commvault-efs"
+          }
+        ],
+        "VpcId": "vpc-77a6ee0d"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/comvault-efs/EfsSecurityGroup/Resource"
+      }
+    },
+    "comvaultefsEfsMountTarget18F24CE53": {
+      "Type": "AWS::EFS::MountTarget",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "comvaultefs32A048FC"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "comvaultefsEfsSecurityGroup0829A991",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-036ee3e72c58d6b48"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/comvault-efs/EfsMountTarget1"
+      }
+    },
+    "comvaultefsEfsMountTarget2586C3089": {
+      "Type": "AWS::EFS::MountTarget",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "comvaultefs32A048FC"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "comvaultefsEfsSecurityGroup0829A991",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-023ac1f96d4611583"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/comvault-efs/EfsMountTarget2"
+      }
+    },
+    "comvaultefsEfsMountTarget3BB9DB20E": {
+      "Type": "AWS::EFS::MountTarget",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "comvaultefs32A048FC"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "comvaultefsEfsSecurityGroup0829A991",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-0185b3310f2050926"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/comvault-efs/EfsMountTarget3"
+      }
+    },
+    "commvaulttaskTaskRoleFCB513A0": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-task/TaskRole/Resource"
+      }
+    },
+    "commvaulttaskTaskRoleDefaultPolicy43E94F17": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "efs:*",
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "commvaultbucket7EF4EC68",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "commvaultbucket7EF4EC68",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "commvaulttaskTaskRoleDefaultPolicy43E94F17",
+        "Roles": [
+          {
+            "Ref": "commvaulttaskTaskRoleFCB513A0"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-task/TaskRole/DefaultPolicy/Resource"
+      }
+    },
+    "commvaulttaskCC9BAAB0": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "Properties": {
+        "ContainerDefinitions": [
+          {
+            "Command": [
+              "-csclientname",
+              "filesys",
+              "-cshost",
+              "-mountpath",
+              "\"/opt/libraryPath\"",
+              "-cvdport",
+              "8600",
+              "-clienthost",
+              "-clientname",
+              "dockermediaagent"
+            ],
+            "Essential": true,
+            "Image": "store/commvaultrepo/mediaagent:SP7",
+            "LogConfiguration": {
+              "LogDriver": "awslogs",
+              "Options": {
+                "awslogs-group": {
+                  "Ref": "commvaulttaskcommvaultcontainerLogGroupC87A025B"
+                },
+                "awslogs-stream-prefix": "commvault",
+                "awslogs-region": "us-east-1"
+              }
+            },
+            "MountPoints": [
+              {
+                "ContainerPath": "/var/log/commvault/Log_Files",
+                "ReadOnly": false,
+                "SourceVolume": "CommvaultLogs"
+              },
+              {
+                "ContainerPath": "/etc/CommVaultRegistry",
+                "ReadOnly": false,
+                "SourceVolume": "CommVaultRegistry"
+              },
+              {
+                "ContainerPath": "/opt/libraryPath",
+                "ReadOnly": false,
+                "SourceVolume": "libraryPath"
+              },
+              {
+                "ContainerPath": "/opt/IndexCache",
+                "ReadOnly": false,
+                "SourceVolume": "IndexCache"
+              },
+              {
+                "ContainerPath": "/opt/jobResults",
+                "ReadOnly": false,
+                "SourceVolume": "jobResults"
+              },
+              {
+                "ContainerPath": "/opt/commvault/Base/certificates",
+                "ReadOnly": false,
+                "SourceVolume": "certificates"
+              }
+            ],
+            "Name": "commvault-container",
+            "PortMappings": [
+              {
+                "ContainerPort": 80,
+                "HostPort": 80,
+                "Protocol": "tcp"
+              }
+            ]
+          }
+        ],
+        "Cpu": "256",
+        "ExecutionRoleArn": {
+          "Fn::GetAtt": [
+            "commvaulttaskExecutionRole396123FC",
+            "Arn"
+          ]
+        },
+        "Family": "commvaultdemocommvaulttask0F95FAAF",
+        "Memory": "512",
+        "NetworkMode": "awsvpc",
+        "RequiresCompatibilities": [
+          "FARGATE"
+        ],
+        "TaskRoleArn": {
+          "Fn::GetAtt": [
+            "commvaulttaskTaskRoleFCB513A0",
+            "Arn"
+          ]
+        },
+        "Volumes": [
+          {
+            "Name": "CommvaultLogs",
+            "EfsVolumeConfiguration": {
+              "AuthorizationConfig": {
+                "AccessPointId": {
+                  "Ref": "CommvaultLogaccesspoint56A64C35"
+                }
+              },
+              "TransitEncryption": "ENABLED",
+              "FileSystemId": {
+                "Ref": "comvaultefs32A048FC"
+              }
+            }
+          },
+          {
+            "Name": "CommVaultRegistry",
+            "EfsVolumeConfiguration": {
+              "AuthorizationConfig": {
+                "AccessPointId": {
+                  "Ref": "CommVaultRegistrysaccesspointB093A8DB"
+                }
+              },
+              "TransitEncryption": "ENABLED",
+              "FileSystemId": {
+                "Ref": "comvaultefs32A048FC"
+              }
+            }
+          },
+          {
+            "Name": "libraryPath",
+            "EfsVolumeConfiguration": {
+              "AuthorizationConfig": {
+                "AccessPointId": {
+                  "Ref": "libraryPathaccesspoint3792E34C"
+                }
+              },
+              "TransitEncryption": "ENABLED",
+              "FileSystemId": {
+                "Ref": "comvaultefs32A048FC"
+              }
+            }
+          },
+          {
+            "Name": "IndexCache",
+            "EfsVolumeConfiguration": {
+              "AuthorizationConfig": {
+                "AccessPointId": {
+                  "Ref": "IndexCacheaccesspoint99530869"
+                }
+              },
+              "TransitEncryption": "ENABLED",
+              "FileSystemId": {
+                "Ref": "comvaultefs32A048FC"
+              }
+            }
+          },
+          {
+            "Name": "jobResults",
+            "EfsVolumeConfiguration": {
+              "AuthorizationConfig": {
+                "AccessPointId": {
+                  "Ref": "jobResultsaccesspointF07C1880"
+                }
+              },
+              "TransitEncryption": "ENABLED",
+              "FileSystemId": {
+                "Ref": "comvaultefs32A048FC"
+              }
+            }
+          },
+          {
+            "Name": "certificates",
+            "EfsVolumeConfiguration": {
+              "AuthorizationConfig": {
+                "AccessPointId": {
+                  "Ref": "certificatesaccesspointBA4C2D75"
+                }
+              },
+              "TransitEncryption": "ENABLED",
+              "FileSystemId": {
+                "Ref": "comvaultefs32A048FC"
+              }
+            }
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-task/Resource"
+      }
+    },
+    "commvaulttaskcommvaultcontainerLogGroupC87A025B": {
+      "Type": "AWS::Logs::LogGroup",
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-task/commvault-container/LogGroup/Resource"
+      }
+    },
+    "commvaulttaskExecutionRole396123FC": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-task/ExecutionRole/Resource"
+      }
+    },
+    "commvaulttaskExecutionRoleDefaultPolicy5CB900E7": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "commvaulttaskcommvaultcontainerLogGroupC87A025B",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "commvaulttaskExecutionRoleDefaultPolicy5CB900E7",
+        "Roles": [
+          {
+            "Ref": "commvaulttaskExecutionRole396123FC"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-task/ExecutionRole/DefaultPolicy/Resource"
+      }
+    },
+    "commvaultserviceLBD58FBF4B": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "LoadBalancerAttributes": [
+          {
+            "Key": "deletion_protection.enabled",
+            "Value": "false"
+          }
+        ],
+        "Scheme": "internal",
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "commvaultserviceLBSecurityGroup401A66BF",
+              "GroupId"
+            ]
+          }
+        ],
+        "Subnets": [
+          "subnet-036ee3e72c58d6b48",
+          "subnet-023ac1f96d4611583",
+          "subnet-0185b3310f2050926"
+        ],
+        "Type": "application"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/LB/Resource"
+      }
+    },
+    "commvaultserviceLBSecurityGroup401A66BF": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Automatically created Security Group for ELB commvaultdemocommvaultserviceLB6D39725B",
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow from anyone on port 443",
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443
+          },
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow from anyone on port 80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+          }
+        ],
+        "VpcId": "vpc-77a6ee0d"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/LB/SecurityGroup/Resource"
+      }
+    },
+    "commvaultserviceLBSecurityGrouptocommvaultdemocommvaultserviceServiceSecurityGroup4481C4798029879C68": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Fn::GetAtt": [
+            "commvaultserviceLBSecurityGroup401A66BF",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "Description": "Load balancer to target",
+        "DestinationSecurityGroupId": {
+          "Fn::GetAtt": [
+            "commvaultserviceServiceSecurityGroup212690EF",
+            "GroupId"
+          ]
+        },
+        "FromPort": 80,
+        "ToPort": 80
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/LB/SecurityGroup/to commvaultdemocommvaultserviceServiceSecurityGroup4481C479:80"
+      }
+    },
+    "commvaultserviceLBPublicListener4F43F6E6": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "commvaultserviceLBPublicListenerECSGroupBB3FCD89"
+            },
+            "Type": "forward"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "commvaultserviceLBD58FBF4B"
+        },
+        "Port": 443,
+        "Protocol": "HTTPS",
+        "Certificates": [
+          {
+            "CertificateArn": {
+              "Ref": "commvaultserviceCertificate90E760E4"
+            }
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/LB/PublicListener/Resource"
+      }
+    },
+    "commvaultserviceLBPublicListenerECSGroupBB3FCD89": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "Port": 80,
+        "Protocol": "HTTP",
+        "TargetType": "ip",
+        "VpcId": "vpc-77a6ee0d"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/LB/PublicListener/ECSGroup/Resource"
+      }
+    },
+    "commvaultserviceLBPublicRedirectListenerDD0EDD0A": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "RedirectConfig": {
+              "Port": "443",
+              "Protocol": "HTTPS",
+              "StatusCode": "HTTP_301"
+            },
+            "Type": "redirect"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "commvaultserviceLBD58FBF4B"
+        },
+        "Port": 80,
+        "Protocol": "HTTP"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/LB/PublicRedirectListener/Resource"
+      }
+    },
+    "commvaultserviceCertificate90E760E4": {
+      "Type": "AWS::CertificateManager::Certificate",
+      "Properties": {
+        "DomainName": "commvault.code.awalker.dev",
+        "DomainValidationOptions": [
+          {
+            "DomainName": "commvault.code.awalker.dev",
+            "HostedZoneId": "Z10007902E9W31HPREL13"
+          }
+        ],
+        "ValidationMethod": "DNS"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/Certificate/Resource"
+      }
+    },
+    "commvaultserviceDNSF70B3247": {
+      "Type": "AWS::Route53::RecordSet",
+      "Properties": {
+        "Name": "commvault.code.awalker.dev.",
+        "Type": "A",
+        "AliasTarget": {
+          "DNSName": {
+            "Fn::Join": [
+              "",
+              [
+                "dualstack.",
+                {
+                  "Fn::GetAtt": [
+                    "commvaultserviceLBD58FBF4B",
+                    "DNSName"
+                  ]
+                }
+              ]
+            ]
+          },
+          "HostedZoneId": {
+            "Fn::GetAtt": [
+              "commvaultserviceLBD58FBF4B",
+              "CanonicalHostedZoneID"
+            ]
+          }
+        },
+        "HostedZoneId": "Z10007902E9W31HPREL13"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/DNS/Resource"
+      }
+    },
+    "commvaultserviceService442C1459": {
+      "Type": "AWS::ECS::Service",
+      "Properties": {
+        "Cluster": {
+          "Ref": "commvaultCC95A527"
+        },
+        "DeploymentConfiguration": {
+          "MaximumPercent": 200,
+          "MinimumHealthyPercent": 50
+        },
+        "DesiredCount": 1,
+        "EnableECSManagedTags": false,
+        "HealthCheckGracePeriodSeconds": 60,
+        "LaunchType": "FARGATE",
+        "LoadBalancers": [
+          {
+            "ContainerName": "commvault-container",
+            "ContainerPort": 80,
+            "TargetGroupArn": {
+              "Ref": "commvaultserviceLBPublicListenerECSGroupBB3FCD89"
+            }
+          }
+        ],
+        "NetworkConfiguration": {
+          "AwsvpcConfiguration": {
+            "AssignPublicIp": "DISABLED",
+            "SecurityGroups": [
+              {
+                "Fn::GetAtt": [
+                  "commvaultserviceServiceSecurityGroup212690EF",
+                  "GroupId"
+                ]
+              }
+            ],
+            "Subnets": [
+              "subnet-036ee3e72c58d6b48",
+              "subnet-023ac1f96d4611583",
+              "subnet-0185b3310f2050926"
+            ]
+          }
+        },
+        "PlatformVersion": "1.4.0",
+        "TaskDefinition": {
+          "Ref": "commvaulttaskCC9BAAB0"
+        }
+      },
+      "DependsOn": [
+        "commvaultserviceLBPublicListenerECSGroupBB3FCD89",
+        "commvaultserviceLBPublicListener4F43F6E6"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/Service/Service"
+      }
+    },
+    "commvaultserviceServiceSecurityGroup212690EF": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "commvault-demo/commvault-service/Service/SecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "VpcId": "vpc-77a6ee0d"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/Service/SecurityGroup/Resource"
+      }
+    },
+    "commvaultserviceServiceSecurityGroupfromcommvaultdemocommvaultserviceLBSecurityGroup75B9C71880D5D1DA73": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "tcp",
+        "Description": "Load balancer to target",
+        "FromPort": 80,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "commvaultserviceServiceSecurityGroup212690EF",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "commvaultserviceLBSecurityGroup401A66BF",
+            "GroupId"
+          ]
+        },
+        "ToPort": 80
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/commvault-service/Service/SecurityGroup/from commvaultdemocommvaultserviceLBSecurityGroup75B9C718:80"
+      }
+    },
+    "CommvaultLogaccesspoint56A64C35": {
+      "Type": "AWS::EFS::AccessPoint",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "comvaultefs32A048FC"
+        },
+        "RootDirectory": {
+          "Path": "/CommvaultLogs"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/CommvaultLog-access-point/Resource"
+      }
+    },
+    "CommVaultRegistrysaccesspointB093A8DB": {
+      "Type": "AWS::EFS::AccessPoint",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "comvaultefs32A048FC"
+        },
+        "RootDirectory": {
+          "Path": "/CommVaultRegistry"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/CommVaultRegistrys-access-point/Resource"
+      }
+    },
+    "libraryPathaccesspoint3792E34C": {
+      "Type": "AWS::EFS::AccessPoint",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "comvaultefs32A048FC"
+        },
+        "RootDirectory": {
+          "Path": "/libraryPath"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/libraryPath-access-point/Resource"
+      }
+    },
+    "IndexCacheaccesspoint99530869": {
+      "Type": "AWS::EFS::AccessPoint",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "comvaultefs32A048FC"
+        },
+        "RootDirectory": {
+          "Path": "/IndexCache"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/IndexCache-access-point/Resource"
+      }
+    },
+    "jobResultsaccesspointF07C1880": {
+      "Type": "AWS::EFS::AccessPoint",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "comvaultefs32A048FC"
+        },
+        "RootDirectory": {
+          "Path": "/jobResults"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/jobResults-access-point/Resource"
+      }
+    },
+    "certificatesaccesspointBA4C2D75": {
+      "Type": "AWS::EFS::AccessPoint",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "comvaultefs32A048FC"
+        },
+        "RootDirectory": {
+          "Path": "/certificates"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/certificates-access-point/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Modules": "aws-cdk=1.70.0,@aws-cdk/assets=1.69.0,@aws-cdk/aws-apigateway=1.69.0,@aws-cdk/aws-applicationautoscaling=1.69.0,@aws-cdk/aws-autoscaling=1.69.0,@aws-cdk/aws-autoscaling-common=1.69.0,@aws-cdk/aws-autoscaling-hooktargets=1.69.0,@aws-cdk/aws-batch=1.69.0,@aws-cdk/aws-certificatemanager=1.69.0,@aws-cdk/aws-cloudformation=1.69.0,@aws-cdk/aws-cloudfront=1.69.0,@aws-cdk/aws-cloudwatch=1.69.0,@aws-cdk/aws-codebuild=1.69.0,@aws-cdk/aws-codecommit=1.69.0,@aws-cdk/aws-codeguruprofiler=1.69.0,@aws-cdk/aws-codepipeline=1.69.0,@aws-cdk/aws-cognito=1.69.0,@aws-cdk/aws-ec2=1.69.0,@aws-cdk/aws-ecr=1.69.0,@aws-cdk/aws-ecr-assets=1.69.0,@aws-cdk/aws-ecs=1.69.0,@aws-cdk/aws-ecs-patterns=1.66.0,@aws-cdk/aws-efs=1.69.0,@aws-cdk/aws-elasticloadbalancing=1.69.0,@aws-cdk/aws-elasticloadbalancingv2=1.69.0,@aws-cdk/aws-events=1.69.0,@aws-cdk/aws-events-targets=1.69.0,@aws-cdk/aws-iam=1.69.0,@aws-cdk/aws-kinesis=1.69.0,@aws-cdk/aws-kms=1.69.0,@aws-cdk/aws-lambda=1.69.0,@aws-cdk/aws-logs=1.69.0,@aws-cdk/aws-route53=1.69.0,@aws-cdk/aws-route53-targets=1.69.0,@aws-cdk/aws-s3=1.69.0,@aws-cdk/aws-s3-assets=1.69.0,@aws-cdk/aws-sam=1.69.0,@aws-cdk/aws-secretsmanager=1.69.0,@aws-cdk/aws-servicediscovery=1.69.0,@aws-cdk/aws-sns=1.69.0,@aws-cdk/aws-sns-subscriptions=1.69.0,@aws-cdk/aws-sqs=1.69.0,@aws-cdk/aws-ssm=1.69.0,@aws-cdk/aws-stepfunctions=1.69.0,@aws-cdk/cloud-assembly-schema=1.69.0,@aws-cdk/core=1.69.0,@aws-cdk/custom-resources=1.69.0,@aws-cdk/cx-api=1.69.0,@aws-cdk/region-info=1.69.0,jsii-runtime=Python/3.7.3"
+      },
+      "Metadata": {
+        "aws:cdk:path": "commvault-demo/CDKMetadata/Default"
+      }
+    }
+  },
+  "Outputs": {
+    "commvaultserviceLoadBalancerDNSF61D4DC7": {
+      "Value": {
+        "Fn::GetAtt": [
+          "commvaultserviceLBD58FBF4B",
+          "DNSName"
+        ]
+      }
+    },
+    "commvaultserviceServiceURL6434A5E6": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "commvaultserviceDNSF70B3247"
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
